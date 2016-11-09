@@ -1,4 +1,4 @@
-package ie.gmit.sw.dc_rad;
+package DBClasses;
 
 
 public class Superhero {

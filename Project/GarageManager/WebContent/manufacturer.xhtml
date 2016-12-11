@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+	<title>Manage Manufacturer</title>
+
+	<f:metadata>
+		<f:event listener="#{garageController.loadManufacturers()}"
+			type="preRenderView" />
+	</f:metadata>
+</h:head>
+
+<h:body>
+	<h:messages globalOnly="true"/>
+	<h:form>
+	<h:commandButton value="Add Manufacturer" action="addManufacturer">
+	</h:commandButton>
+     <h:dataTable value="#{garageController.manufacturers}" var="m" headerClass="table-header" style="border: 1px solid black">
+			<h:column>
+	    		<!-- column header -->
+	    		<f:facet name="header">Manufacturer Code</f:facet>
+	    		<!-- row record -->
+	    		#{m.manu_code}
+	    	</h:column>
+	    	<h:column>
+	    		<!-- column header -->
+	    		<f:facet name="header">Manufacturer Name</f:facet>
+	    		<!-- row record -->
+	    		#{m.manu_name}
+	    	</h:column>
+	    	<h:column>
+	    		<!-- column header -->
+	    		<f:facet name="header">Manufacturer Details</f:facet>
+	    		<!-- row record -->
+				#{m.manu_details}
+	    	</h:column>
+	    	<h:column>
+	    		<!-- column header -->
+	    		<f:facet name="header">Action</f:facet>
+	    		<!-- row record -->
+	    		<h:commandLink class="subAnchor" value="Update" action="#{garageController.loadManufacturerUpdate(m.manu_code)}"> </h:commandLink>
+	    		<br />
+				<h:commandLink class="subAnchor" value="Delete" onclick="if (! confirm('Really delete this?') ) { return false;}; return true;" action="#{garageController.deleteManufacturer(m.manu_code)}"> </h:commandLink>
+	    	</h:column>
+		</h:dataTable>
+	</h:form>
+	<h:outputLink value="index.xhtml">Home</h:outputLink>
+</h:body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+	<title>Vehicle Details</title>
+</h:head>
+
+<h:body>
+	<h:messages globalOnly="true"/>
+	<h:form>
+		<h1>Vehicle Details:</h1>
+     	<p><h:outputLabel>Registration Number: </h:outputLabel> <h:outputLabel>#{selectedVehicle.reg}</h:outputLabel></p>
+     	
+     	<p><h:outputLabel>Manufacturer Code: </h:outputLabel> <h:outputLabel>#{selectedVehicle.manu_code}</h:outputLabel></p>
+     	
+     	<p><h:outputLabel>Manufacturer Name: </h:outputLabel> <h:outputLabel>#{selectedVehicle.manu_name}</h:outputLabel></p>
+     	
+     	<p><h:outputLabel>Manufacturer Details: </h:outputLabel> <h:outputLabel>#{selectedVehicle.manu_details}</h:outputLabel></p>
+     	
+     	<p><h:outputLabel>Model Code: </h:outputLabel> <h:outputLabel>#{selectedVehicle.model_code}</h:outputLabel></p>
+     	
+     	<p><h:outputLabel>Model Name: </h:outputLabel> <h:outputLabel>#{selectedVehicle.model_name}</h:outputLabel></p>
+     	
+     	<p><h:outputLabel>Model Description: </h:outputLabel> <h:outputLabel>#{selectedVehicle.model_desc}</h:outputLabel></p>
+     	
+     	<p><h:outputLabel>Mileage: </h:outputLabel> <h:outputLabel>#{selectedVehicle.mileage}</h:outputLabel></p>
+     	
+     	<p><h:outputLabel>Price: </h:outputLabel> <h:outputLabel>#{selectedVehicle.price}</h:outputLabel></p>
+     	
+     	<p><h:outputLabel>Colour: </h:outputLabel> <h:outputLabel>#{selectedVehicle.colour}</h:outputLabel></p>
+     	
+     	<p><h:outputLabel>Fuel: </h:outputLabel> <h:outputLabel>#{selectedVehicle.fuel}</h:outputLabel></p>
+	</h:form>
+	<h:outputLink value="index.xhtml">Home</h:outputLink>
+</h:body>
+</html>

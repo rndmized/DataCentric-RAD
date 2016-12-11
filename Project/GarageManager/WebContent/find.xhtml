@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+	<title>Find Vehicle</title>
+</h:head>
+<h:body>
+	<h:messages globalOnly="true"/>
+	<h:form>
+	<h1> Find all vehicles: </h1>
+		    <p>Price:  <h:selectOneMenu value="#{vehicleDetails.criteria}">
+		    		<f:selectItem itemValue="-1" itemLabel="Less Than"></f:selectItem>
+		    		<f:selectItem itemValue="0" itemLabel="Equal"></f:selectItem>
+		    		<f:selectItem itemValue="1" itemLabel="Greater Than"></f:selectItem>
+		    	</h:selectOneMenu>
+		    	<h:inputText value="#{vehicleDetails.price}" id="price"/> </p>
+		    <p>Colour:  <h:inputText value="#{vehicleDetails.colour}" id="colour"/></p>
+		    <p>Fuel:  <h:selectOneMenu value="#{vehicleDetails.fuel}">
+		    	<f:selectItem itemValue="diesel" itemLabel="diesel"></f:selectItem>
+		    	<f:selectItem itemValue="petrol" itemLabel="petrol"></f:selectItem>
+		    </h:selectOneMenu></p><br />
+		<h:commandButton value="Search" action="#{garageController.searchVehicles(vehicleDetails)}">
+	</h:commandButton>
+	</h:form>
+</h:body>
+</html>

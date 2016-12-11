@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+	<title>Model Table</title>
+
+	<f:metadata>
+		<f:event listener="#{garageController.loadModels()}"
+			type="preRenderView" />
+	</f:metadata>
+</h:head>
+
+<h:body>
+	<h:messages globalOnly="true"/>
+	<h:form>
+	<h:commandButton value="Add Model" action="addModel">
+	</h:commandButton>
+     <h:dataTable value="#{garageController.models}" var="m" headerClass="table-header" style="border: 1px solid black">
+			<h:column>
+	    		<!-- column header -->
+	    		<f:facet name="header">Manufacturer Code</f:facet>
+	    		<!-- row record -->
+	    		#{m.manu_code}
+	    	</h:column>
+	    	<h:column>
+	    		<!-- column header -->
+	    		<f:facet name="header">Model Code</f:facet>
+	    		<!-- row record -->
+	    		#{m.model_code}
+	    	</h:column>
+	    	<h:column>
+	    		<!-- column header -->
+	    		<f:facet name="header">Model Name</f:facet>
+	    		<!-- row record -->
+				#{m.model_name}
+	    	</h:column>
+	    	<h:column>
+	    		<!-- column header -->
+	    		<f:facet name="header">Model Details</f:facet>
+	    		<!-- row record -->
+				#{m.model_desc}
+	    	</h:column>
+		</h:dataTable>
+	</h:form>
+	<h:outputLink value="index.xhtml">Home</h:outputLink>
+</h:body>
+</html>

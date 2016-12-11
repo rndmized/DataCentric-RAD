@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+	<title>Add Vehicle</title>
+</h:head>
+<h:body>
+	<h:messages globalOnly="true"/>
+	<h:form>
+	<h1> Add Vehicle: </h1>
+			<p>Registration #:  <h:inputText value="#{vehicle.reg}" id="reg" required="true" requiredMessage="Reg is mandatory"/><h:message for="reg"/> </p>
+		    <p>Manufacturer Code:  <h:inputText value="#{vehicle.manu_code}" id="manu_code" required="true" requiredMessage="Manufacturer code is mandatory"/>  <h:message for="manu_code"/> </p>
+		    <p>Model Code:  <h:inputText value="#{vehicle.model_code}" id="model_code" required="true" requiredMessage="Model code is mandatory"/>  <h:message for="model_code"/></p>
+		    <p>Mileage:  <h:inputText value="#{vehicle.mileage}" id="mileage" required="false"/></p>
+		    <p>Price:  <h:inputText value="#{vehicle.price}" id="price" required="false"/></p>
+		    <p>Colour:  <h:inputText value="#{vehicle.colour}" id="colour" required="false"/></p>
+		    <p>Fuel:  <h:inputText value="#{vehicle.fuel}" id="fuel" required="false"/></p><br />   
+		<h:commandButton value="Add Vehicle" action="#{garageController.addVehicle(vehicle)}">
+	</h:commandButton>
+	</h:form>
+</h:body>
+</html>

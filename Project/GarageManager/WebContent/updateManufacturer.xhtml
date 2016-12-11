@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+	<title>Update Manufacturer</title>
+</h:head>
+<h:body>
+	<h:messages globalOnly="true"/>
+	<h:form>
+		<h1> Update Manufacturer: </h1>
+		<p><h:outputLabel>Manufacturer Code:</h:outputLabel> <h:inputText value="#{manufacturerUpdate.manu_code}" id="manu_code" readonly="true" ></h:inputText></p>
+		<p><h:outputLabel>Manufacturer Name:</h:outputLabel> <h:inputText value="#{manufacturerUpdate.manu_name}" id="manu_name" ></h:inputText></p>
+		<p><h:outputLabel>Manufacturer Details:</h:outputLabel> <h:inputText value="#{manufacturerUpdate.manu_details}" id="manu_details" ></h:inputText></p>
+		<p><h:commandButton value="Update Manufacturer" action="#{garageController.updateManufacturer(manufacturerUpdate.manu_code, manufacturerUpdate.manu_name, manufacturerUpdate.manu_details)}" ></h:commandButton></p>
+	</h:form>
+</h:body>
+</html>

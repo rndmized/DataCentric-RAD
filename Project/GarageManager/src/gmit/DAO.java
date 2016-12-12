@@ -66,8 +66,9 @@ public class DAO {
 
 	public void updateManufacturer(Manufacturer m) throws SQLException {
 	 
+		
 	 Connection conn = mysqlDS.getConnection(); 
-	 PreparedStatement myStmt = conn.prepareStatement("update manufacturer set manu_name = ? , manu_details = ? where manu_code = ?");
+	 PreparedStatement myStmt = conn.prepareStatement("update manufacturer set manu_name = ? , manu_details = ? where manu_code = ? ;");
 	 
 	 myStmt.setString(1, m.getManu_name()); 
 	 myStmt.setString(2, m.getManu_details()); 
@@ -117,7 +118,6 @@ public class DAO {
 		myStmt.setDouble(5, v.getPrice());
 		myStmt.setString(6, v.getColour());
 		myStmt.setString(7, v.getFuel());
-		System.out.println(myStmt.toString());
 
 		myStmt.executeUpdate();
 	}
@@ -283,8 +283,6 @@ public class DAO {
 			myStmt.setString(2,v.getColour());
 		}
 		
-		System.out.println(myStmt.toString());
-		System.out.println(query);
 
 		ResultSet rs = myStmt.executeQuery();
 

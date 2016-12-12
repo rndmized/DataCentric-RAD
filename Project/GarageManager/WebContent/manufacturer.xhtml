@@ -6,6 +6,7 @@
 
 <h:head>
 	<title>Manage Manufacturer</title>
+	<h:outputStylesheet name="css/styles.css" />
 
 	<f:metadata>
 		<f:event listener="#{garageController.loadManufacturers()}"
@@ -14,11 +15,12 @@
 </h:head>
 
 <h:body>
+
 	<h:messages globalOnly="true"/>
 	<h:form>
 	<h:commandButton value="Add Manufacturer" action="addManufacturer">
 	</h:commandButton>
-     <h:dataTable value="#{garageController.manufacturers}" var="m" headerClass="table-header" style="border: 1px solid black">
+     <h:dataTable value="#{garageController.manufacturers}" var="m" headerClass="table-header" rowClasses="odd,even" style="border: 1px solid black">
 			<h:column>
 	    		<!-- column header -->
 	    		<f:facet name="header">Manufacturer Code</f:facet>

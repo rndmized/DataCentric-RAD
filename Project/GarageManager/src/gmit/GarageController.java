@@ -42,7 +42,7 @@ public class GarageController {
 		Map<String, Object> requestMap = externalContext.getRequestMap();
 		try {
 			m = dao.loadManufacturer(manu_code);
-			requestMap.put("manufacturerUpdate", m);
+			requestMap.put("manufacturer", m);
 			return "updateManufacturer.xhtml";
 		} catch (Exception e) {
 			FacesMessage message = 	new FacesMessage("Error: "+ e.getMessage());
@@ -111,9 +111,7 @@ public class GarageController {
 	/************************************************** Update Functions ******************************************************/
 	/**************************************************************************************************************************/
 	
-	public String updateManufacturer(String  manu_code, String manu_name, String manu_details){
-		Manufacturer m = new Manufacturer(manu_code, manu_name, manu_details);
-		System.out.println(m.getManu_code());
+	public String updateManufacturer(Manufacturer m){
 		try {
 			dao.updateManufacturer(m);
 			return "manufacturer.xhtml";

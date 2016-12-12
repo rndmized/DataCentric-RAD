@@ -1,0 +1,17 @@
+body { width: 750px; font:verdana-14px }
+
+.table-header {
+	background-color: navy;
+	color: white;
+	font-family: verdana;
+	font-size: 100%;
+}
+	    
+.odd{ 
+	background:#62b0ff;
+}
+
+.even{
+	background:#d7d7ff;
+}
+

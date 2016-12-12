@@ -6,6 +6,7 @@
 
 <h:head>
 	<title>Vehicle Table</title>
+	<h:outputStylesheet name="css/styles.css" />
 
 	<f:metadata>
 		<f:event listener="#{garageController.loadVehicles()}"
@@ -18,7 +19,7 @@
 	<h:form>
 	<h:commandButton value="Add Vehicle" action="addVehicle.xhtml">
 	</h:commandButton>
-     <h:dataTable value="#{garageController.vehicles}" var="v" headerClass="order-table-header" style="border: 1px solid black">
+     <h:dataTable value="#{garageController.vehicles}" var="v" headerClass="table-header" rowClasses="odd,even" style="border: 1px solid black">
 			<h:column>
 	    		<!-- column header -->
 	    		<f:facet name="header">Reg Code</f:facet>
